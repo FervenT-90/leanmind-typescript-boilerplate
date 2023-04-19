@@ -1,16 +1,16 @@
 /**
  * Main Class
  */
-export class Main {
-  public static COMMANDS = 'Hello World';
+export class TemplateEngine {
+  public template: string;
+  public dictionary: { key: string, value: string };
 
-  public param: string;
-
-  constructor(param: string) {
-    this.param = param;
+  constructor(template: string, dictionary: { key: string, value: string }) {
+    this.template = template;
+    this.dictionary = dictionary;
   }
 
-  public getParam(): string {
-    return this.param;
+  public getResult(): string {
+    return this.template.replace('${' + this.dictionary.key + '}', this.dictionary.value)
   }
 }
