@@ -3,9 +3,9 @@
  */
 export class TemplateEngine {
   public template: string;
-  public dictionary: { key: string, value: string };
+  public dictionary: { [key: string]: string };
 
-  constructor(template: string, dictionary: { key: string, value: string }) {
+  constructor(template: string, dictionary: { [key: string]: string }) {
     this.template = template;
     this.dictionary = dictionary;
   }
