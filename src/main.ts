@@ -11,6 +11,11 @@ export class TemplateEngine {
   }
 
   public getResult(): string {
-    return this.template.replace('${' + this.dictionary.key + '}', this.dictionary.value)
+    let result = ''
+    Object.entries(this.dictionary).map(([key, value]) => {
+      result = this.template.replace('${' + key + '}', value)
+
+    })
+    return result
   }
 }
